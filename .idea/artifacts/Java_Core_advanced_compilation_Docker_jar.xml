@@ -1,0 +1,10 @@
+<component name="ArtifactManager">
+  <artifact name="Java_Core_advanced_compilation_Docker:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/Java_Core_advanced_compilation_Docker_jar</output-path>
+    <root id="root">
+      <element id="archive" name="Java_Core_advanced_compilation_Docker.jar">
+        <element id="module-output" name="Java_Core_advanced_compilation_Docker" />
+      </element>
+    </root>
+  </artifact>
+</component>
