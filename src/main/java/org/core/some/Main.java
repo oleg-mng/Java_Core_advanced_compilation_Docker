@@ -9,8 +9,14 @@ import org.core.another.Operation;
  * java -classpath ./out org.core.some.Main
  *
  * docker build . -t myappwithdocker
- *
  *  docker run myappwithdocker
+ *
+ *  dockerfile
+ * FROM bellsoft/liberica-openjdk-alpine:latest
+ * COPY ./java ./src
+ * RUN mkdir ./out
+ * RUN javac -sourcepath ./src -d out src/org/core/some/Main.java
+ * CMD java -classpath ./out org.core.some.Main
  *
  */
 
