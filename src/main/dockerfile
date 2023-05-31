@@ -1,5 +1,5 @@
-FROM bellsoft/liberica-openjdk-alpine:17.0.7
+FROM bellsoft/liberica-openjdk-alpine:latest
 COPY ./java ./src
 RUN mkdir ./out
 RUN javac -sourcepath ./src -d out src/org/core/some/Main.java
-CMD java -classpath ./out org.core.some.Main.java
+CMD java -classpath ./out org.core.some.Main
