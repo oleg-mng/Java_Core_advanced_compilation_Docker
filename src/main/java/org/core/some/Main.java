@@ -11,12 +11,27 @@ import org.core.another.Operation;
  * docker build . -t myappwithdocker
  *  docker run myappwithdocker
  *
- *  dockerfile
+ *  dockerfile1
  * FROM bellsoft/liberica-openjdk-alpine:latest
  * COPY ./java ./src
  * RUN mkdir ./out
  * RUN javac -sourcepath ./src -d out src/org/core/some/Main.java
  * CMD java -classpath ./out org.core.some.Main
+ *
+ * dockerfile2
+ * FROM bellsoft/liberica-openjdk-alpine:latest AS BuildProject1
+ * WORKDIR /app
+ * COPY ./java ./src
+ * RUN mkdir ./out
+ * RUN javac -sourcepath ./src -d out ./src/org/core/some/Main.java
+ *
+ * FROM scratch AS readyFiles
+ * COPY --from=BuildProject1 /app/out /bin
+ *
+ * docker buildx build --output type=local,dest=. .
+ *
+ *
+ *
  *
  */
 
